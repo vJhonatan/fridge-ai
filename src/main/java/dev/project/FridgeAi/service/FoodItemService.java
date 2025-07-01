@@ -26,4 +26,9 @@ public class FoodItemService {
     public List<FoodItem> getAllFoodItems() {
         return repository.findAll();
     }
+
+    // Update
+    public FoodItem updateFoodItem(Long id, FoodItem foodItem){
+        return repository.save(foodItem);
+    }
 }

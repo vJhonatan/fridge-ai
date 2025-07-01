@@ -29,4 +29,11 @@ public class FoodItemController {
         List<FoodItem> lista = service.getAllFoodItems();
         return ResponseEntity.ok(lista);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<FoodItem> updateFoodItem(@PathVariable Long id, @RequestBody FoodItem foodItem){
+        foodItem.setId(id);
+        FoodItem newFoodItem = service.updateFoodItem(id,foodItem);
+        return ResponseEntity.ok(newFoodItem);
+    }
 }
