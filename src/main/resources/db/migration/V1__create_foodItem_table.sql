@@ -1,0 +1,7 @@
+CREATE TABLE tb_food_item (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    quantity INTEGER NOT NULL,
+    expiration_date DATE NOT NULL,
+    category SMALLINT NOT NULL
+);

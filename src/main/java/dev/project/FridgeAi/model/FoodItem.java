@@ -19,6 +19,7 @@ public class FoodItem {
 
     private String name;
 
+    @Enumerated(EnumType.STRING)
     private CategoryEnum category;
 
     private Integer quantity;
