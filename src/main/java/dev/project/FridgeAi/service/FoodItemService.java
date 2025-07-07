@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FoodItemService {
@@ -17,18 +18,23 @@ public class FoodItemService {
         this.repository = repository;
     }
 
-    // Post
     public FoodItem createFoodItem(FoodItem foodItem){
         return repository.save(foodItem);
     }
 
-    // Get
     public List<FoodItem> getAllFoodItems() {
         return repository.findAll();
     }
 
-    // Update
+    public Optional<FoodItem> getFoodById(Long id){
+        return repository.findById(id);
+    }
+
     public FoodItem updateFoodItem(Long id, FoodItem foodItem){
         return repository.save(foodItem);
+    }
+
+    public void deleteFood (Long id){
+        repository.deleteById(id);
     }
 }
